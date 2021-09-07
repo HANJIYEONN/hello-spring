@@ -1,13 +1,16 @@
+//버전 설정 및 lib 땡겨옴
 plugins {
 	id 'org.springframework.boot' version '2.5.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
 
+//
 group = 'hello'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '11' //java11 varsion
 
+//mavenCentral 에서 필요한걸 다운 받음
 repositories {
 	mavenCentral()
 }
