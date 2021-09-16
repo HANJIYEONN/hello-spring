@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 */
 
 @SpringBootTest
-@Transactional //트렌젝션 실행하고 test끝나면 rollback해줌
+//@Transactional //트렌젝션 실행하고 test끝나면 rollback해줌
 //Ctrl + Shift + T 하면 테스트 케이스 생김 
 class MemberServiceIntegrationTest {
 
@@ -42,10 +43,11 @@ class MemberServiceIntegrationTest {
 */
 
     @Test
+    @Commit
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("camp");
 
         //when
         Long saveId = memberService.join(member);
